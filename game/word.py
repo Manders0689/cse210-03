@@ -19,7 +19,7 @@ class Word:
         """Constructs a new instance of Word.
         
         Args:
-            self (Card): An instance of Word.
+            self (Word): An instance of Word.
         """
         self._word_list = ['apple', 'audio', 'zesty', 'fluffy']
         self._word = random.choice(self._word_list)
@@ -32,7 +32,7 @@ class Word:
         """Compares the user guess letter to letters within the chosen_word list.
         
         Args:
-            self (Card): An instance of Card.
+            self (Word): An instance of Word.
         """
         if letter in self._word:
             return True
@@ -43,18 +43,19 @@ class Word:
         """Displays the word and any correctly guessed letters that are within the chosen_word.
         
         Args:
-            self (Card): An instance of Card.
+            self (Word): An instance of Word.
         """
         for i in range(len(self._word)):
             if new_letter == self._word[i]:
                 self._word_output[i] = new_letter
         return self._word_output
 
-    def is_found(self):
+    def _is_found(self):
         if "".join(self._word_output) == self._word:
             return True
         else:
             return False
+
         
 '''Methods:
     _compare_letter
