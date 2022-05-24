@@ -12,7 +12,7 @@ class Word:
     Attributes:
         _word_list (list[str]): List of words randomly chosen from.
         _word (string): word chosen from Word list.
-        _display_word (list[str]): placeholder for each letter until correct guess.
+        _word_output (list[str]): placeholder for each letter until correct guess.
     """
 
     def __init__(self):
@@ -21,7 +21,9 @@ class Word:
         Args:
             self (Word): An instance of Word.
         """
-        self._word_list = ['apple', 'audio', 'zesty', 'fluffy']
+        self._word_list = ['absurd','album','audio','buffalo','cobweb','duplex','equip','fuchsia',
+            'gizmo','haiku','injury','jinx','kayak','luxury','matrix','nuisance','oxygen','pajama','psyche',
+            'quarts','rhythm','strength','twelfth','umbrella','vortex','walkway','xylophone','zesty']
         self._word = random.choice(self._word_list)
         self._word_output = []
         
@@ -62,4 +64,6 @@ class Word:
         compare guess to chosen word
     _display_word
         update word output
+    _is_found
+        checks to see if hidden word has been found
 '''   
