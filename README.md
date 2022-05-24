@@ -26,3 +26,4 @@ root                    (project root folder)
 
 ## Authors
 * Katie Harman (har21099@byui.edu)
+* Alexa Thompson (a2005strand@yahoo.com)
