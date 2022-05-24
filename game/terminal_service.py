@@ -18,7 +18,17 @@ class TerminalService:
         return input(prompt)
 
         
-    def write_text(self, list):
+    def write_text(self, text):
+        """Displays the given text on the terminal. 
+
+        Args: 
+            self (TerminalService): An instance of TerminalService.
+            text (string): The text to display.
+        """
+        print(text)
+
+
+    def write_list(self, list):
         """Displays the given text on the terminal. 
 
         Args: 

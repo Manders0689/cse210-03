@@ -1,3 +1,8 @@
+from game.terminal_service import TerminalService
+from game.guesser import Guesser
+from game.jumper import Jumper
+from game.word import Word
+
 class Director:
     '''Person who directs the game.
     
