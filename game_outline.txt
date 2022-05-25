@@ -1,0 +1,45 @@
+Classes:
+•	Director
+•	Guesser
+•	Jumper
+•	Terminal_service
+•	Word
+
+Game play:
+	
+Director:
+1.	Starts game
+
+Inputs:
+2.	Get random word from Word 
+
+Updates:
+3.	Convert random word to _ _ _ _ _ etc.
+
+Outputs:
+4.	Print empty word
+5.	Print completed jumper
+
+Guesser:
+6.	Ask user for letter
+7.	Get user input
+
+Word:
+8.	Compare user input to random word
+9.	If letter is in random word, replace _ with correct letter
+10.	Save updated word
+
+Jumper:
+11.	If letter is not in random word, remove top row of printed jumper
+12.	Save updated jumper
+
+Outputs:
+13.	Print updated word
+14.	Print updated jumper
+
+Repeat:
+15.	Loop through steps 6-14 until word is guessed, or if jumper’s parachute is gone
+
+Outputs:
+16.	End game message, and break.
+
