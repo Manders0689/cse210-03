@@ -59,11 +59,11 @@ class Word:
             return False
 
         
-'''Methods:
+"""Methods:
     _compare_letter
         compare guess to chosen word
     _display_word
         update word output
     _is_found
         checks to see if hidden word has been found
-'''   
+"""   

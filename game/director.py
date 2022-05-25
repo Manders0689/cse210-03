@@ -40,8 +40,14 @@ class Director:
             self._do_outputs()
             
     def _get_inputs(self):
-        """ """
+        """Get random word from Word class. 
         
+        Args:
+            self (Director): An instance of Director.
+        """
+        new_word = self._word._display_word()
+        
+                
         
     def _do_updates(self):
         """ """
