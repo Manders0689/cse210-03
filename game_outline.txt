@@ -8,38 +8,56 @@ Classes:
 Game play:
 	
 Director:
-1.	Starts game
+    1.	Starts game
 
-Inputs:
-2.	Get random word from Word 
+    Inputs:
+	Get random word from Word (this is done in the 
+        __init__ function of the Word class, so instead 
+        we need to get the user's letter guess)
+    2. read_text()
+        set self._guess to input
 
-Updates:
-3.	Convert random word to _ _ _ _ _ etc.
+    Updates:
+	Convert random word to _ _ _ _ _ etc. (this is 
+        done in the __init__ funciton for Word class as well)
+    3. compare_letter()
+    4. calls either _display_word() if in hidden word or _update_jumper() if not
 
-Outputs:
-4.	Print empty word
-5.	Print completed jumper
+    Outputs:
+    5.	Print output word
+    6.	Print updated jumper
+    7. check if game is over
 
 Guesser:
-6.	Ask user for letter
-7.	Get user input
+    Ask user for letter (this is done in Director) 
+        so get_guess should be a function that returns 
+        self._guess so that it can be accessed outside of the class
+    8.	checks if a duplicate letter has been guessed, 
+        or if a non-single letter has been guessed
+    9. might need a set_guess function to set Guesser guess to the input?
 
 Word:
-8.	Compare user input to random word
-9.	If letter is in random word, replace _ with correct letter
-10.	Save updated word
+    10.	Compare user input to random word
+    11.	If letter is in random word, replace _ with correct letter
+    12.	Save updated word
+    13. is_found checks if the hidden word has been found
 
 Jumper:
-11.	If letter is not in random word, remove top row of printed jumper
-12.	Save updated jumper
+    If letter is not in random word (this should be done in 
+    Director by if statement), then call update_jumper to remove 
+        top row of printed jumper or change the 0 to X.
+    14.	get_jumper should be a function that returns 
+        self._jumper so that it can be accessed outside of the 
+        class, and printed
+    15. function that checks if the parachute is gone.
 
-Outputs:
-13.	Print updated word
-14.	Print updated jumper
+    Outputs:
+    16.	Print updated word (this isn't a Jumper function, it's a word function _display_word())
+    17.	Print updated jumper (done in Director)
 
-Repeat:
-15.	Loop through steps 6-14 until word is guessed, or if jumper’s parachute is gone
+    Repeat:
+    18.	Loop through steps 6-14 until word is guessed, or if jumper’s parachute is gone
 
-Outputs:
-16.	End game message, and break.
+    Outputs:
+    19.	End game message, and break.
 
