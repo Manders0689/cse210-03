@@ -6,15 +6,16 @@ class Guesser:
     The resposibility of a Guesser is to keep track of the letters guessed in hidden word.
     
     Attributes:
-        guesses (list): stores guesses made.
+        guesses (list[str]): stores guesses made.
         guess (string): induvidual letter guessed.
-        """
+    """
     
     """Methods
         get_guess
         if_duplicate_guess
             compare current guess with guesses_list         
-        add_guess to guesses_list
+            add_guess to guesses_list
+        set_guess
     """
 
     def __init__(self):
@@ -27,13 +28,20 @@ class Guesser:
         self._guess = ''
 
     def get_guess(self):
-        """Get guess from the user"""
+        """Gets the current guess.
+        
+        Returns:
+            string: The current guess
+        """
         return self._guess
    
-
     def if_duplicate_guess(self):
-        """Compare guess to guess list and determine if duplicate
-        If a duplicate, prompt for new guess"""
+        """Checks if letter has already been guessed.
+
+        Args:
+            self (Guesser): An instance of Guesser.
+            guess (string): The current guess.
+        """
         if self._guess in self.guess_list:
             return 1
         elif self._guess.isalpha() and (len(self._guess) < 2):
@@ -43,4 +51,10 @@ class Guesser:
             return 2
         
     def set_guess(self, letter):
+        """Sets the current guess.
+
+        Args:
+            self (Guesser): An instance of Guesser.
+            guess (string): The current guess.
+        """
         self._guess = letter

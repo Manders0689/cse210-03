@@ -52,6 +52,11 @@ class Word:
         return self._word_output
 
     def _is_found(self):
+        """Checks if hidden_word has been found.
+        
+        Args:
+            self (Word): An instance of Word.
+        """
         if "".join(self._word_output) == self._word:
             return True
         else:

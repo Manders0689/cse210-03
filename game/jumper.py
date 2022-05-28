@@ -15,22 +15,40 @@ class Jumper:
     """
 
     def __init__(self):
-        """  draw jumper """
+        """Constructs a new Jumper.
+
+        Args:
+            self (Jumper): An instance of Jumper.
+        """
         self._jumper = [' ___', '/___\\', '\\   /', ' \\ /', '  0', ' /|\\', ' / \\', '', '^^^^^^^']
 
 
     def has_fallen(self):
-      if len(self._jumper) == 5:
-          return True
-      else: 
-          return False
+        """Checks if _jumper has fallen because his parachute is gone.
+        
+        ARgs:
+            self (Jumper): An instance of Jumper.
+        """
+        if len(self._jumper) == 5:
+            return True
+        else: 
+            return False
     
     def update_jumper(self):
+        """ Takes a line from the Jumper drawing.
+        
+        Args: 
+            self (Jumper): An instance of Jumper.
+        """
         if self._jumper[0] == '  0':
             self._jumper[0] = '  x'
         else:
             self._jumper.pop(0)
-
       
     def get_jumper(self):
+        """Gets the Jumper.
+        
+        Returns:
+            list[str]: _jumper
+        """
         return self._jumper
