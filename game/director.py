@@ -40,27 +40,33 @@ class Director:
             self._do_outputs()
             
     def _get_inputs(self):
-        """Get random word from Word class. 
+        """ Get random word from Word class. 
         
         Args:
             self (Director): An instance of Director.
         """
-        new_word = self._word._display_word()
-        
+        new_word = self._word
+              
                 
         
     def _do_updates(self):
-        """ """
+        """ Get updated word
+            Get updated jumper
+        """
+        updated_word = self._word._display_word()
         
         
     def _do_outputs(self):
-        """ """
+        """ Output updated word
+            Output updated jumper
+        """
         
         
+        if self._jumper.is_dead():
+            self._is_playing = False
+             
         
         
-        
-    
     """Methods
     
     start-game
