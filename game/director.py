@@ -53,15 +53,15 @@ class Director:
         """ Get updated word
             Get updated jumper
         """
-        updated_word = self._word._display_word()
+        self._guesser.????(????) 
         
         
     def _do_outputs(self):
         """ Output updated word
             Output updated jumper
         """
-        
-        
+        updatedWord = self._jumper.????()
+        updatedJumper = self._jumper.????()
         if self._jumper.is_dead():
             self._is_playing = False
              
@@ -79,5 +79,6 @@ class Director:
         update word if correct guess
         update jumper if wrong guess
     _do_outputs
-        show word and jumper update
+        show word update
+        show jumper update
     """
