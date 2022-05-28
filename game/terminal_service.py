@@ -25,14 +25,17 @@ class TerminalService:
             self (TerminalService): An instance of TerminalService.
             text (string): The text to display.
         """
-        print(text)
+        for letter in text:
+            print(letter, end = " ")
+        print()
 
-
-    def write_list(self, list):
+    def print_jumper(self, list):
         """Displays the given text on the terminal. 
 
         Args: 
             self (TerminalService): An instance of TerminalService.
             text (string): The text to display.
         """
-        print(list)
+        print()
+        for i in list:
+            print(i)

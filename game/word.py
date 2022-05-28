@@ -1,6 +1,5 @@
 import random
 
-from pyparsing import stringStart
 
 class Word:
     """A Word that is a list with each item being a letter in the word.

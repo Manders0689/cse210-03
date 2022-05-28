@@ -34,6 +34,8 @@ class Director:
         Ars:
             self (Director): an instance of Director.
         """
+        self._terminal_service.write_text(self._word._display_word(self._guesser.get_guess()))
+        self._terminal_service.print_jumper(self._jumper.get_jumper())
         while self._is_playing:
             self._get_inputs()
             self._do_updates()
@@ -45,25 +47,38 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        new_word = self._word
-              
-                
+        newGuess = self._terminal_service.read_text("Guess a letter (a-z)")
+        self._guesser.set_guess(newGuess.lower())
+        while self._guesser.if_duplicate_guess() == 1 or self._guesser.if_duplicate_guess() == 2:
+            if self._guesser.if_duplicate_guess() == 1:
+                newGuess = self._terminal_service.read_text("\nYou\'ve already guessed this letter. Please guess a different letter [a-z]: ")
+                self._guesser.set_guess(newGuess)
+            elif self._guesser.if_duplicate_guess() == 2:
+                newGuess = self._terminal_service.read_text("\nThat isn't a letter. Please guess a different letter [a-z]: ")
+                self._guesser.set_guess(newGuess)
+                                                        
         
     def _do_updates(self):
         """ Get updated word
             Get updated jumper
         """
-        self._guesser.????(????) 
-        
+        newGuess = self._guesser.get_guess()
+        if self._word._compare_letter(newGuess):
+            self._word._display_word(self._word)
+        else: 
+            self._jumper.update_jumper()
         
     def _do_outputs(self):
         """ Output updated word
             Output updated jumper
         """
-        updatedWord = self._jumper.????()
-        updatedJumper = self._jumper.????()
-        if self._jumper.is_dead():
+        self._terminal_service.write_text(self._word._display_word(self._guesser.get_guess()))
+        if self._jumper.has_fallen():
+            self._jumper.update_jumper()
+        self._terminal_service.print_jumper(self._jumper.get_jumper())
+        if self._jumper.has_fallen() or self._word._is_found():
             self._is_playing = False
+        
              
         
         

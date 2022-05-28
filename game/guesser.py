@@ -24,14 +24,23 @@ class Guesser:
             self (Guesser): An instance of Guesser.
         """
         self.guess_list = []
-        self.guess = ''
+        self._guess = ''
 
     def get_guess(self):
-        """Gets a guess from the user"""
+        """Get guess from the user"""
+        return self._guess
+   
 
     def if_duplicate_guess(self):
         """Compare guess to guess list and determine if duplicate
         If a duplicate, prompt for new guess"""
-
-    def add_guess(self):
-        "Add guess to guesses list"
+        if self._guess in self.guess_list:
+            return 1
+        elif self._guess.isalpha() and (len(self._guess) < 2):
+            self.guess_list.append(self._guess)  
+            return 0
+        else:
+            return 2
+        
+    def set_guess(self, letter):
+        self._guess = letter
