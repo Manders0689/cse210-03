@@ -47,7 +47,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        newGuess = self._terminal_service.read_text("Guess a letter (a-z)")
+        newGuess = self._terminal_service.read_text("Guess a letter (a-z): ")
         self._guesser.set_guess(newGuess.lower())
         while self._guesser.if_duplicate_guess() == 1 or self._guesser.if_duplicate_guess() == 2:
             if self._guesser.if_duplicate_guess() == 1:
