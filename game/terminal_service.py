@@ -23,7 +23,7 @@ class TerminalService:
 
         Args: 
             self (TerminalService): An instance of TerminalService.
-            text (string): The text to display.
+            text (list[str]): The text to display.
         """
         for letter in text:
             print(letter, end = " ")
@@ -34,7 +34,7 @@ class TerminalService:
 
         Args: 
             self (TerminalService): An instance of TerminalService.
-            text (string): The text to display.
+            text (list[str]): The text to display.
         """
         print()
         for i in list:

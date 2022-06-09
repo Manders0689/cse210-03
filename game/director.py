@@ -47,7 +47,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        newGuess = self._terminal_service.read_text("Guess a letter (a-z)")
+        newGuess = self._terminal_service.read_text("Guess a letter (a-z): ")
         self._guesser.set_guess(newGuess.lower())
         while self._guesser.if_duplicate_guess() == 1 or self._guesser.if_duplicate_guess() == 2:
             if self._guesser.if_duplicate_guess() == 1:
@@ -55,12 +55,16 @@ class Director:
                 self._guesser.set_guess(newGuess)
             elif self._guesser.if_duplicate_guess() == 2:
                 newGuess = self._terminal_service.read_text("\nThat isn't a letter. Please guess a different letter [a-z]: ")
-                self._guesser.set_guess(newGuess)
-                                                        
+                self._guesser.set_guess(newGuess)                                                
         
     def _do_updates(self):
-        """ Get updated word
-            Get updated jumper
+        """ Compares guess to chosen_word.
+
+        If correct, changes display word with correct letter.
+        if wrong, changes jumper.
+
+        Args:
+            self (Director): An instance of Director.
         """
         newGuess = self._guesser.get_guess()
         if self._word._compare_letter(newGuess):
@@ -69,8 +73,10 @@ class Director:
             self._jumper.update_jumper()
         
     def _do_outputs(self):
-        """ Output updated word
-            Output updated jumper
+        """Prints jumper and display word.
+
+        Args:
+            self (Director): An instance of Director.
         """
         self._terminal_service.write_text(self._word._display_word(self._guesser.get_guess()))
         if self._jumper.has_fallen():
